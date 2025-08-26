@@ -1,16 +1,25 @@
 import React from 'react';
-import { Button, View } from 'react-native';
+import { Button, View, Text, Pressable } from 'react-native';
 
 import { styles } from './BatButtomStyles';
+import { BatTextInput } from '../BatTextInput/BatTextInput';
 
 export function BatButtom() {
   return (
-    <View style={styles.container}>
-        <Button 
-            accessibilityLabel='click em mim'
-            onPress={() => {console.log('clicou')}}
-            title="Aperte aqui"
-        ></Button>
-    </View>
+    <>
+        <BatTextInput />
+        
+        <Pressable 
+            onPress={() => {console.log('clicou no GENERATE')}}
+            style={styles.button}>
+            <Text style={styles.text}> GENERATE </Text>
+        </Pressable>
+
+        <Pressable 
+            onPress={() => {console.log('clicou no COPY')}}
+            style={styles.button}>
+            <Text style={styles.text}> COPY </Text>
+        </Pressable>
+    </>
   );
 }
