@@ -1,18 +1,26 @@
-import React from 'react';
-import { Button, View, Text, Pressable } from 'react-native';
+import React, {useState} from 'react';
+import { Text, Pressable } from 'react-native';
 
 import { styles } from './BatButtomStyles';
 import { BatTextInput } from '../BatTextInput/BatTextInput';
 
 export function BatButtom() {
+
+  const[pass, setPass] = useState('');
+
+  function handleGenerateButtom() {
+    setPass('ola');
+  }
+
   return (
     <>
-        <BatTextInput />
+        <BatTextInput pass={pass} />
         
         <Pressable 
-            onPress={() => {console.log('clicou no GENERATE')}}
-            style={styles.button}>
-            <Text style={styles.text}> GENERATE </Text>
+            onPress={handleGenerateButtom}
+            style={styles.button}
+        >
+            <Text style={styles.text}> GENERATE</Text>
         </Pressable>
 
         <Pressable 
