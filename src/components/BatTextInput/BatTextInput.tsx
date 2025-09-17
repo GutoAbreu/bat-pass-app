@@ -10,12 +10,10 @@ interface BatTextInputProps {
 
 export function BatTextInput( props : BatTextInputProps ) {
   return (
-    
-        <TextInput 
+      <TextInput 
             placeholder = 'pass'
             style       = {styles.inputer} 
             value       = {props.pass}
         />
-    
   );
 }
